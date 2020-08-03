@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
     }
 
     checkEmailAndPassword(email: any, password: any) {
-        return this.usersList.some(val => {
+        return this.usersList?.some(val => {
             if (val.email === email && val.password === password) {
                 localStorage.setItem('permission', val.permission);
                 return true
