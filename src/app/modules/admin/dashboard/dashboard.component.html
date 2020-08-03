@@ -1,6 +1,11 @@
 <div class="container my-5">
     <h5 class="font-weight-bold mb-4 text-center">Registered Users List</h5>
+    <div class="row text-right">
+        <div class="col-12">
+            <button (click)='logout()' class="btn-primary">Logout</button>
 
+        </div>
+    </div>
     <ng-container *ngIf="usersData && usersData.length;else nodata">
         <div class="row mb-3">
             <div class="col-6 text-left">

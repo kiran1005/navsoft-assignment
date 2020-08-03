@@ -2,15 +2,20 @@
 
 
     <ng-container *ngIf='!isEdit'>
-        <h5 class="font-weight-bold mb-4 text-center">Dummy Data List</h5>
-        <div class="row mb-3">
-            <div class="col-6 text-left" *ngIf="currentUserPer==='Add'">
-                <button (click)='add()' class="btn btn-primary">Add New Post</button>
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4 text-center">
+                <h5 class="font-weight-bold mb-4 text-center">Dummy Data List</h5>
 
             </div>
-
-            <div class="col-6 text-right">
+            <div class="col-4 text-right">
                 <button (click)='logout()' class="btn btn-primary">Logout</button>
+
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-12 text-right" *ngIf="currentUserPer==='Add'">
+                <button (click)='add()' class="btn btn-primary">Add New Post</button>
 
             </div>
         </div>

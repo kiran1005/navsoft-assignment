@@ -3,6 +3,7 @@ import { User } from 'src/app/models/user-model';
 import { UserlistService } from 'src/app/services/user-list.service';
 import { ExportExcelService } from 'src/app/export-to-excel.service';
 import jsPDF from 'jspdf';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -17,7 +18,8 @@ export class DashboardComponent implements OnInit {
   @ViewChild('tbldata', { static: false }) content: ElementRef;
   constructor(
     private _UserlistService: UserlistService,
-    private _ExportExcelService: ExportExcelService
+    private _ExportExcelService: ExportExcelService,
+    private _Router: Router
   ) {
     this.permissions = ['Select', 'Add', 'Edit', 'Delete']
     this.usersData = [];
@@ -66,6 +68,10 @@ export class DashboardComponent implements OnInit {
       ,
       'export_data')
   }
+  logout() {
+    this._Router.navigate(['/login']);
+  }
+
   permissionChange(event: any, userId: any) {
     this.usersData.forEach((val, index, array) => {
       if (val.id === userId) {
