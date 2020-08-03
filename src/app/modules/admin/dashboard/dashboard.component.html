@@ -1,7 +1,7 @@
 <div class="container my-5">
     <h5 class="font-weight-bold mb-4 text-center">Registered Users List</h5>
 
-    <ng-container *ngIf="usersData.length;else nodata">
+    <ng-container *ngIf="usersData && usersData.length;else nodata">
         <div class="row mb-3">
             <div class="col-6 text-left">
                 <button (click)='onPdf()' class="btn btn-primary">Export to PDF</button>
@@ -48,7 +48,7 @@
 
     </ng-container>
     <ng-template #nodata>
-        <h1>No User is registered..!!</h1>
+        <h1 class="text-center mt-5 text-success">No User is registered..!!</h1>
     </ng-template>
 
 
