@@ -1,0 +1,55 @@
+<div class="container my-5">
+    <h5 class="font-weight-bold mb-4 text-center">Registered Users List</h5>
+
+    <ng-container *ngIf="usersData.length;else nodata">
+        <div class="row mb-3">
+            <div class="col-6 text-left">
+                <button (click)='onPdf()' class="btn btn-primary">Export to PDF</button>
+
+            </div>
+
+            <div class="col-6 text-right">
+                <button (click)='onExcel()' class="btn btn-primary">Export to Excel</button>
+
+            </div>
+        </div>
+        <table #tbldata class="table mb-0 table-hover table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>User Name</th>
+                    <th>Email</th>
+                    <th>Mobile Number</th>
+                    <th>Password</th>
+                    <th>Current Permission</th>
+                    <th>Change User Permission</th>
+                </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngFor='let arr of usersData'>
+                    <tr>
+                        <td>{{arr.name}}</td>
+                        <td>{{arr.email}}</td>
+                        <td>{{arr.mobile}}</td>
+                        <td>{{arr.password}}</td>
+                        <td>{{arr.permission}}</td>
+                        <td>
+                            <select (change)="permissionChange($event,arr.id)" class="form-control w-50">
+                                <!-- <option disabled value="All">All</option> -->
+                                <option *ngFor="let per of permissions" value={{per}}>
+                                    {{per}}
+                                </option>
+                            </select>
+                        </td>
+                    </tr>
+                </ng-container>
+
+            </tbody>
+        </table>
+
+    </ng-container>
+    <ng-template #nodata>
+        <h1>No User is registered..!!</h1>
+    </ng-template>
+
+
+</div>

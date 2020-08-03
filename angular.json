@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "navsoft-assignment"
+    }
+  },
+  "defaultProject": "navsoft-assignment",
+  "cli": {
+    "analytics": "2385c375-d2d6-4b4b-8f68-932ac8621fdc"
+  }
 }
